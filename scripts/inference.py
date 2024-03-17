@@ -67,6 +67,8 @@ def main():
     )
     text_encoder.y_embedder = model.y_embedder  # hack for classifier-free guidance
 
+    print("Model type:", type(model))
+
     # 3.2. move to device & eval
     vae = vae.to(device, dtype).eval()
     model = model.to(device, dtype).eval()
